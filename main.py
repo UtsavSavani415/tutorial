@@ -10,4 +10,3 @@ def fetchAndSaveToFile(url, path):
 
 
 fetchAndSaveToFile(url, "data/times.html")
-
