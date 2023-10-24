@@ -11,5 +11,3 @@ def fetchAndSaveToFile(url, path):
 
 fetchAndSaveToFile(url, "data/times.html")
 
-res = requests.get(url)
-print(res.json())
