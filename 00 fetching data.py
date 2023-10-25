@@ -5,7 +5,7 @@ url = "https://timesofindia.indiatimes.com/"
 
 def fetchAndSaveToFile(url, path):
     r = requests.get(url)
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf8") as f:
         f.write(r.text)
 
 

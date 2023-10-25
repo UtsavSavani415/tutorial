@@ -6,6 +6,7 @@ with open("sample.html", "r") as f:
 
 soup = BeautifulSoup(html_doc, 'html.parser')
 
-# print(soup.prettify())
-# print(soup.title.string, type(soup.title.string))
+print(soup.prettify())
+print(soup.title.string, type(soup.title.string))
+
 print(soup.find_all("div")[1])
