@@ -1,12 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 
-with open("sample.html", "r") as f:
-    html_doc = f.read()
+# with open("sample.html", "r") as f:
+#     html_doc = f.read()
 
-soup = BeautifulSoup(html_doc, 'html.parser')
+r = requests.get("https://webscraper.io/test-sites/e-commerce/allinone/computers")
 
-print(soup.prettify())
-print(soup.title.string, type(soup.title.string))
+soup = BeautifulSoup(r.text, 'lxml')
 
-print(soup.find_all("div")[1])
+print("##########################################################")
+print(soup.div)
+# print(soup.title.string, type(soup.title.string))
+
+# print(soup.find_all("div")[1])
