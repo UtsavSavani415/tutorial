@@ -52,3 +52,4 @@ df = pd.DataFrame({"Product Name":product_name, "Product Price": product_price, 
 print(df)
 
 # df.to_csv("product_details.csv")
+# df.to_excel("product_details.xlsx")
