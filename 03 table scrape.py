@@ -21,6 +21,23 @@ for i in headers:
 
 print(titles)
 
-ds = pd.DataFrame(columns=titles)
+df = pd.DataFrame(columns=titles)
 
-print(ds)
+
+
+rows = soup.find_all("tr", class_ = "")
+
+for i in rows[1:]:
+    data = i.find_all("td")
+
+    # print(data)
+    row = [tr.text for tr in data]
+    # print(row)
+    l = len(df)
+    if(len(row)>0):
+        df.loc[l] = row
+    # print(l)
+
+# print(rows)
+
+print(df)
