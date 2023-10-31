@@ -23,13 +23,19 @@ for i in header:
     title = i.text
     titles.append(title)
 
+df = pd.DataFrame(columns=titles)
 
 rows = table.find_all("tr")
 
 for i in rows[1:]:
-    data = i.find_all("td")
+    first_td = i.find_all("td")[0].find("div", class_="ih-pt-ic").text.strip()
+    data = i.find_all("td")[1:]
     row = [tr.text for tr in data]
-    print(row)
+    row.insert(0,first_td)
+    l = len(df)
+    df.loc[l] = row
+    # print(row)
 
-df = pd.DataFrame(columns=titles)
-# print(df)
+print(df)
+
+df.to_csv("IPL_auction.csv")
